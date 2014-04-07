@@ -11,10 +11,13 @@
 
 @interface ReceitaStore : NSObject
 
+
+
 + (ReceitaStore *)sharedInstance;
 
 -(Receita *)next;
 -(Receita *)previous;
+-(Receita *)currentAtual;
 -(void)addReceita:(Receita*)novaReceita;
 
 @end

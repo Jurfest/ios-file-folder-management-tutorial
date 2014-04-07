@@ -381,6 +381,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Receitas/Receitas-Prefix.pch";
 				INFOPLIST_FILE = "Receitas/Receitas-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -394,6 +395,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Receitas/Receitas-Prefix.pch";
 				INFOPLIST_FILE = "Receitas/Receitas-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -458,6 +460,7 @@
 				2752EA9118E8DA1A001EF848 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2752EA9218E8DA1A001EF848 /* Build configuration list for PBXNativeTarget "ReceitasTests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +469,7 @@
 				2752EA9418E8DA1A001EF848 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

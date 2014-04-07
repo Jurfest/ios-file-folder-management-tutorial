@@ -11,6 +11,7 @@
 @implementation ReceitaStore {
     NSArray *receitas;
     NSInteger current;
+    
 }
 
 + (ReceitaStore *)sharedInstance
@@ -25,11 +26,22 @@
 -(id)initPrivado {
     self = [super init];
     if(self) {
-        // TODO recuperar as receitas do arquivo
+        
+        NSFileManager *fileManager = [[NSFileManager alloc] init ];
+        NSArray *urls = [fileManager URLsForDirectory:
+        NSDocumentDirectory inDomains:NSUserDomainMask];
+        NSString *docs = [urls objectAtIndex:0];
+        NSString *file = [docs stringByAppendingPathComponent:@"receitas"];
+        receitas = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
+        current = 0;
     }
+    
     return self;
 }
 
+-(Receita *)currentAtual {
+    return [receitas objectAtIndex:current];
+}
 
 -(Receita*)previous {
     if(current == 0) {

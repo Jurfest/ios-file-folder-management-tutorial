@@ -8,11 +8,24 @@
 
 #import "MackenzieAppDelegate.h"
 #import "ReceitaViewController.h"
+#import "Receita.h"
 
 @implementation MackenzieAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSFileManager *fileManager = [[NSFileManager alloc] init ];
+    NSArray *urls = [fileManager URLsForDirectory:
+                     NSDocumentDirectory inDomains:NSUserDomainMask];
+    NSString *docs = [urls objectAtIndex:0];
+    NSString *file = [docs stringByAppendingPathComponent:@"receitas"];
+    NSMutableArray *receitas = [[NSMutableArray alloc]init];
+    Receita *bolo = [[Receita alloc]init];
+    bolo.nome = @"bolo";
+    [receitas addObject:bolo];
+    [NSKeyedArchiver archiveRootObject:receitas toFile: file];
+    
+    //
     ReceitaViewController *viewController = [[ReceitaViewController alloc]
                                             initWithNibName:nil
                                             bundle:nil];

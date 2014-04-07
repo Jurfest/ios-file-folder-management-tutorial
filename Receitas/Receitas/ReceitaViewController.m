@@ -104,7 +104,7 @@
 
 - (void)update
 {
-    // TODO atualizar a view com a receita atual
+    nome.text = [[[ReceitaStore sharedInstance] currentAtual]nome];
 }
 
 
